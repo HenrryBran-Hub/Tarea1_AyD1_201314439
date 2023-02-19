@@ -18,6 +18,13 @@ app.post('/api/postsuma', (req,res) => {
     res.json({resultado : suma});
 });
 
+app.get('/api/myinfo', (req,res) => {
+    res.json({
+        name: 'Henrry David Bran Velasquez',
+        id: '201314439'
+    })
+})
+
 const PORT= 3000;
 app.listen(PORT,() => {
     console.log('Servidor iniciado en el puerto ${PORT}')
