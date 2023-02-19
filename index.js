@@ -6,14 +6,14 @@ const app = express();
 app.use(bodyparser.urlencoded({ extended:true}));
 app.use(bodyparser.json());
 
-app.post('/api/postsuma', (req,res) => {
+app.post('/api/postmul', (req,res) => {
     const {num1, num2} = req.body;
     if (!num1 || !num2) {
         res.status(400).json({error: 'Debes proporcionar dos numeros'});
         return;
     }
 
-    const suma = parseInt(num1) + parseInt(num2)
+    const suma = parseInt(num1) * parseInt(num2)
 
     res.json({resultado : suma});
 });
